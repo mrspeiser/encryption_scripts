@@ -1,0 +1,8 @@
+#!/bin/bash
+name="$1"
+
+if [[ -z "$1" ]]; then
+	read -p "enter name for key: " name
+fi
+
+ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/$name -C "host@$(hostname).com"
